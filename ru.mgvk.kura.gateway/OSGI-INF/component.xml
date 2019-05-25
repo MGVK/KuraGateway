@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+               name="ru.mgvk.kura.gateway.Main"
+               activate="activate"
+               configuration-policy="require"
+               deactivate="deactivate"
+               enabled="true"
+               immediate="true"
+               modified="modified">
+
+    <implementation class="ru.mgvk.kura.gateway.Main"/>
+    <property name="service.pid" value="ru.mgvk.kura.gateway.Main"/>
+    <property name="input.cardinality.minimum" type="Integer" value="1"/>
+    <property name="input.cardinality.maximum" type="Integer" value="10"/>
+
+    <property name="input.cardinality.default" type="Integer" value="1"/>
+
+    <property name="output.cardinality.minimum" type="Integer" value="1"/>
+
+
+    <property name="output.cardinality.maximum" type="Integer" value="10"/>
+    <property name="output.cardinality.default" type="Integer" value="1"/>
+    <reference name="WireHelperService"
+               bind="bindWireHelperService"
+               cardinality="1..1"
+               interface="org.eclipse.kura.wire.WireHelperService"
+               policy="static"
+               unbind="unbindWireHelperService"/>
+    <reference name="WireGraphService"
+               bind="bindWireGraphService"
+               cardinality="1..1"
+               interface="org.eclipse.kura.wire.graph.WireGraphService"
+               policy="static"
+               unbind="unbindWireGraphService"/>
+    <reference name="ConfigurationService"
+               bind="bindConfigurationService"
+               cardinality="1..1"
+               interface="org.eclipse.kura.configuration.ConfigurationService"
+               policy="static"
+               unbind="unbindConfigurationService"/>
+    <service>
+        <provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
+        <provide interface="org.eclipse.kura.wire.WireComponent"/>
+        <provide interface="org.osgi.service.wireadmin.Consumer"/>
+        <provide interface="org.eclipse.kura.wire.WireEmitter"/>
+        <provide interface="org.osgi.service.wireadmin.Producer"/>
+        <provide interface="org.eclipse.kura.wire.multiport.MultiportWireReceiver"/>
+
+
+    </service>
+
+</scr:component>
