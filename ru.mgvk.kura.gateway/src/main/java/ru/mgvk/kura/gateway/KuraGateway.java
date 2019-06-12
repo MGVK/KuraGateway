@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.eclipse.kura.configuration.ComponentConfiguration;
 import org.eclipse.kura.configuration.ConfigurableComponent;
 import org.eclipse.kura.configuration.ConfigurationService;
+import org.eclipse.kura.type.TypedValue;
+import org.eclipse.kura.type.TypedValues;
 import org.eclipse.kura.wire.*;
 import org.eclipse.kura.wire.graph.CachingAggregatorFactory;
 import org.eclipse.kura.wire.graph.MultiportWireSupport;
@@ -16,14 +18,14 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.wireadmin.Wire;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static java.util.Objects.isNull;
 
-public class Main implements WireEmitter, MultiportWireReceiver, ConfigurableComponent,
+public class KuraGateway implements WireEmitter, MultiportWireReceiver, ConfigurableComponent,
         NetWorker.OnDataReceiver {
 
     private static final Logger logger = LogManager.getLogger(Main.class);

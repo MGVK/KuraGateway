@@ -136,25 +136,25 @@ public class GraphWorker {
     }
 
 
-    void addComponent() {
+//    void addComponent() {
+//
+//    }
+//
+//    void removeComponent() {
+//
+//    }
 
-    }
-
-    void removeComponent() {
-
-    }
-
-    List<WireComponentConfiguration> listComponents() {
-        if (graphService != null) {
-            try {
-                return graphService.get().getWireComponentConfigurations();
-            } catch (KuraException e) {
-                e.printStackTrace();
-                logger.error(e.getMessage());
-            }
-        }
-        return Collections.emptyList();
-    }
+//    List<WireComponentConfiguration> listComponents() {
+//        if (graphService != null) {
+//            try {
+//                return graphService.get().getWireComponentConfigurations();
+//            } catch (KuraException e) {
+//                e.printStackTrace();
+//                logger.error(e.getMessage());
+//            }
+//        }
+//        return Collections.emptyList();
+//    }
 
     public void updatePorts(int emitterWiresCount, int recieverWiresCount) {
         logger.info("updating ports: em:{} rec:{}", emitterWiresCount, recieverWiresCount);

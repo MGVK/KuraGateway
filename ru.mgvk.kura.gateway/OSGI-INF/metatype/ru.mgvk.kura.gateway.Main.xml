@@ -8,7 +8,7 @@
      http://www.eclipse.org/legal/epl-v10.html
 -->
 <MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
-    <OCD id="ru.mgvk.kura.gateway.Main"
+    <OCD id="ru.mgvk.kura.gateway.KuraGateway"
          name="Gateway"
          description="Gateway">
 
@@ -62,7 +62,7 @@
 
     </OCD>
 
-    <Designate pid="ru.mgvk.kura.gateway.Main" factoryPid="ru.mgvk.kura.gateway.Main">
-        <Object ocdref="ru.mgvk.kura.gateway.Main"/>
+    <Designate pid="ru.mgvk.kura.gateway.KuraGateway" factoryPid="ru.mgvk.kura.gateway.KuraGateway">
+        <Object ocdref="ru.mgvk.kura.gateway.KuraGateway"/>
     </Designate>
 </MetaData>

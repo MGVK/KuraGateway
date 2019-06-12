@@ -34,7 +34,6 @@ public class NetWorker {
         try {
             client = new Socket(ip, port);
         } catch (Exception e) {
-//            logger.info("Unable to connect to {}:{}", ip, port);
             if (repeatTimes > 0 && checkIP(ip) && checkPort(port)) {
                 new Thread(() -> {
                     int count = repeatTimes;
@@ -56,24 +55,20 @@ public class NetWorker {
                     obos = new ObjectOutputStream(os);
                 }
             } catch (Exception e) {
-//                logger.info("Unable to open stream to {}:{}", ip, port);
                 result = false;
             }
         } else {
             result = false;
         }
-        if (result) {
-//            logger.info("Connection to {}:{} established!", ip, port);
-        }
 
         return result;
     }
 
-    private boolean checkIP(String ip) {
+    boolean checkIP(String ip) {
         return PATTERN.matcher(ip).matches();
     }
 
-    private boolean checkPort(int port) {
+    boolean checkPort(int port) {
         return port > 1000 && port <= 65536;
     }
 

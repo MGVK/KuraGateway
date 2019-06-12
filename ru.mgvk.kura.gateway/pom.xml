@@ -25,7 +25,7 @@
                         <Bundle-Name>Kura Gateway</Bundle-Name>
                         <Bundle-Vendor>MGVK</Bundle-Vendor>
                         <Bundle-Version>1.0.0</Bundle-Version>
-                        <Bundle-Activator>ru.mgvk.kura.gateway.Main</Bundle-Activator>
+                        <Bundle-Activator>ru.mgvk.kura.gateway.KuraGateway</Bundle-Activator>
                         <Import-Package>org.osgi.framework</Import-Package>
                     </instructions>
                 </configuration>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
-               name="ru.mgvk.kura.gateway.Main"
+               name="ru.mgvk.kura.gateway.KuraGateway"
                activate="activate"
                configuration-policy="require"
                deactivate="deactivate"
@@ -8,8 +8,8 @@
                immediate="true"
                modified="modified">
 
-    <implementation class="ru.mgvk.kura.gateway.Main"/>
-    <property name="service.pid" value="ru.mgvk.kura.gateway.Main"/>
+    <implementation class="ru.mgvk.kura.gateway.KuraGateway"/>
+    <property name="service.pid" value="ru.mgvk.kura.gateway.KuraGateway"/>
     <property name="input.cardinality.minimum" type="Integer" value="1"/>
     <property name="input.cardinality.maximum" type="Integer" value="10"/>
 
